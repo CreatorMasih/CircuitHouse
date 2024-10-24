@@ -1,0 +1,116 @@
+.sidebar-container {
+  max-width: 20vw;
+  height: 100vh;
+}
+
+.hamburger {
+  display: flex;
+  align-items: center;
+  background: none;
+  color: rgb(240, 243, 245);
+  border: none;
+  font-size: 25px;
+  cursor: pointer;
+  padding: 15px;
+  justify-content: flex-start; /* Aligns hamburger to the left */
+}
+
+.sidebar.closed {
+  width: 60px;
+}
+
+.hamburger .sidebar-title {
+  margin-left: 20px; /* Adds space between the icon and title */
+  font-size: 21px;
+  color: rgb(39, 227, 241);
+}
+
+/* Sidebar menu styling */
+.sidebar ul {
+  padding: 0;
+  list-style: none;
+  margin-top: 10px;
+}
+
+.sidebar ul li {
+  padding: 15px;
+  display: flex;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.sidebar ul li i {
+  margin-right: 25px;
+  font-size: 18px;
+}
+
+.sidebar ul li span {
+  white-space: nowrap;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.sidebar.closed ul li span {
+  opacity: 0;
+}
+
+/* Dropdown styling */
+.sidebar ul ul {
+  display: none;
+  list-style: none;
+}
+
+.sidebar ul ul.open {
+  display: block;
+}
+
+.sidebar ul ul li {
+  padding: 10px;
+  position: relative;
+  left: -60%;
+  margin-top: 20%;
+  background-color: #34495e;
+}
+
+.sidebar ul ul li:hover {
+  background-color: #35324e;
+}
+
+/* Chevron arrow styling */
+.sidebar ul li i.fa-chevron-right {
+  margin-left: auto;
+  font-size: 16px;
+  transition: transform 0.3s ease;
+}
+
+.sidebar ul li.open i.fa-chevron-right {
+  transform: rotate(90deg); /* Rotate arrow when dropdown is open */
+}
+
+.sidebar ul li i.fa-chevron-right,
+.sidebar ul li i.fa-chevron-down {
+  margin-left: 20px; /* Adjusted gap between arrow and text */
+}
+
+@media (max-width: 667px) {
+  .sidebar.closed {
+    width: 50px;
+  }
+}
+
+/* Hover and Active State - Updated */
+.sidebar ul li.active, /* This keeps the hover effect on the active page */
+.sidebar ul li:hover {
+  background-color: #313b46;
+  color: #fff;
+}
+
+.sidebar ul li.active span, /* Ensure the text and icon remain highlighted */
+.sidebar ul li:hover span {
+  color: #fff;
+}
+
+.sidebar ul li.active i, /* Ensure the icon remains highlighted */
+.sidebar ul li:hover i {
+  color: #fff;
+}

@@ -1,0 +1,139 @@
+.customer-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.customer-title {
+    color: rgb(1, 1, 18);
+    font-size: 25px;
+}
+
+.customer-search-container {
+    width: 55%;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.customer-search-input {
+    width: 80%;
+    max-width: 600px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.customer-data-table {
+    /* width: 100%; */
+    border-collapse: collapse;
+    /* margin: 0 auto; */
+}
+
+.customer-data-table th,
+.customer-data-table td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #fbfdff;
+}
+
+.customer-data-table th {
+    background-color: rgb(37, 34, 80);
+    color: white;
+}
+
+input[type="text"],
+input[type="email"] {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+th,
+td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+button {
+    background-color: white;
+    color: rgb(14, 2, 2);
+    padding: 8px 12px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #3a444e;
+}
+
+.customer-action-menu {
+    position: relative;
+}
+
+.customer-three-dot-menu {
+    border: none;
+    background: white;
+    color: black;
+    cursor: pointer;
+    font-size: 18px;
+    z-index: 2;
+}
+
+.customer-action-dropdown {
+    position: absolute;
+    top: -15px;
+    left: 45px;
+    border: 1px solid #ddd;
+    background: white;
+    z-index: 1;
+    padding: 10px;
+}
+
+.customer-action-dropdown button {
+    color: black;
+
+    display: block;
+    padding: 4px;
+    width: auto;
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 15px;
+    margin: 0;
+}
+@media (max-width:768px){
+    .customer-data-table th {
+        font-size: 14px;
+        text-align: center;
+       
+    }
+}
+@media (max-width:667px) {
+    .customer-container {
+       
+        overflow-x: auto;
+    }
+    .customer-data-table th {
+        font-size: 12px;
+    }
+
+   
+   
+    .customer-data-table {
+       
+        margin: 0 auto;
+    }
+    .customer-search-container {
+        width: 100%;
+       
+    }
+
+}
+@media (max-width:376px){
+    .customer-container {
+        width: 100%;
+        overflow-x: auto;
+    }
+}

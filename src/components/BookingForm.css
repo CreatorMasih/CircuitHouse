@@ -1,0 +1,242 @@
+/* Apply box-sizing to all elements */
+* {
+    box-sizing: border-box; /* Include padding and border in element's total width */
+}
+
+.booking-form-container {
+    display: flex;
+    flex-direction: column; /* Stack buttons below */
+    align-items: center; /* Center elements horizontally */
+    padding: 40px; /* Increased padding for normal view */
+    background-color: #f7f7f7; /* Light background color */
+    width: 100%; /* Full width for the form */
+    max-width: 1200px; /* Adjust max width as needed */
+    margin: 0 auto; /* Center the form horizontally */
+}
+
+.booking-form-group {
+    display: flex; /* Align items in a row */
+    align-items: center; /* Center items vertically */
+    justify-content: center;
+    gap: 10%; /* Space between elements for normal view */
+    width: 100%; /* Full width for the form group */
+    max-width: 800px; /* Set a max width for the form group */
+    margin: 0 20%; /* Centering margin */
+}
+
+
+
+.check-now{
+    display: flex; /* Align items in a row */
+    align-items: center; /* Center items vertically */
+    justify-content: center;
+    flex-direction: row;
+    gap: 10%; /* Space between elements for normal view */
+    width: 100%; /* Full width for the form group */
+    max-width: 800px; /* Set a max width for the form group */
+    margin: 0 20%; 
+}
+
+
+.booking-location-select-container {
+    flex: 0 0 150px; /* Fixed width for location select */
+    max-width: 100%; /* Prevent it from exceeding the parent width */
+}
+
+.booking-date-picker-group {
+    display: flex; /* Align check-in and check-out date pickers in a row */
+    flex: 1; /* Make it take remaining space */
+}
+
+.booking-date-picker {
+    flex: 1; /* Allow date pickers to take equal space */
+}
+
+.booking-form-container label {
+    font-size: 20px; /* Increased font size for labels */
+    font-weight: bold;
+}
+
+.booking-form-container select,
+.booking-form-container input {
+    padding: 12px; /* Adjust padding for inputs */
+    border: 1px solid #ddd; /* Light border color */
+    border-radius: 30px; /* Rounded corners */
+    font-size: 16px; /* Adjusted font size for inputs */
+    width: 100%; /* Full width for inputs */
+}
+
+.booking-form-container button {
+    padding: 12px 20px; /* Adjusted padding for buttons */
+    background-color: #007bff; /* Bootstrap primary blue */
+    color: white;
+    border: none;
+    font-weight: bolder;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 16px; /* Adjusted font size for buttons */
+    margin-top: 20px; /* Add margin above buttons */
+}
+
+.booking-form-container button:hover {
+    /* background-color: black; */
+    border: solid thin #007bff;
+    color: black;
+    background-color: white;
+}
+
+/* Availability Section Styles */
+.booking-availability-section {
+    margin-top: 20px; /* Space above the availability section */
+    padding: 15px; /* Increased padding */
+    background-color: #e7f3fe; /* Light blue background for the section */
+    border: 1px solid #b3d7ff; /* Border around the section */
+    border-radius: 4px; /* Rounded corners */
+    width: 100%; /* Full width for the availability section */
+    max-width: 1200px; /* Same max width for consistency */
+    position: relative; /* Positioning context for close button */
+}
+
+.booking-room-status {
+    display: flex; /* Align items in a row */
+    justify-content: space-between; /* Space between room number and availability status */
+    padding: 10px 0; /* Increased vertical padding for each room status */
+    font-size: 16px; /* Adjusted font size for room status */
+}
+
+.booking-status-dot {
+    width: 12px; /* Increased width of the status dot */
+    height: 12px; /* Increased height of the status dot */
+    border-radius: 50%; /* Make it a circle */
+}
+
+.booking-green {
+    background-color: green; /* Green for available rooms */
+}
+
+.booking-red {
+    background-color: red; /* Red for not available rooms */
+}
+
+.booking-close-button {
+    position: absolute; /* Position it in the corner */
+    top: 10px; /* Adjust position */
+    right: 10px; /* Adjust position */
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+    .booking-form-container { 
+        flex-direction: column; /* Stack elements vertically on smaller screens */
+        padding: 20px; /* Reduced padding for mobile */
+        justify-content: center;
+        align-items: center;
+        width: 90%; /* Use a percentage to allow some padding */
+        max-width: 100%; /* Prevent exceeding screen width */
+    }
+
+
+
+.booking-form-group {
+    display: flex; /* Align items in a row */
+    align-items: center; /* Center items vertically */
+    justify-content: center;
+    flex-direction: column;
+    gap: 10%; /* Space between elements for normal view */
+    width: 100%; /* Full width for the form group */
+    max-width: 800px; /* Set a max width for the form group */
+    margin: 0 20%; 
+}
+
+.check-now{
+    display: flex; /* Align items in a row */
+    align-items: center; /* Center items vertically */
+    justify-content: center;
+    flex-direction: row;
+    gap: 10%; /* Space between elements for normal view */
+    width: 100%; /* Full width for the form group */
+    max-width: 800px; /* Set a max width for the form group */
+    margin: 0 20%; 
+}
+
+
+    .booking-location-select-container {
+        
+        width: 90%; /* Full width for location select on mobile */
+        margin-bottom: -50px;
+    }
+
+
+    .elct{
+        display: inline-block;
+       
+        padding-left: 70px;
+        
+    }
+
+    .booking-location-select{
+        text-align: center;
+    }
+
+    
+    .booking-date-picker-group {
+        
+        width: 100%; /* Full width for date pickers on mobile */
+        margin-bottom: 10px; 
+        
+        justify-content: center;
+        /* margin-left: 90px; */
+        gap: 5%; /* Space between date pickers */
+    }
+
+    .booking-form-container label {
+        font-size: 14px; /* Decreased font size for labels */
+        margin-left: 2%; /* Left margin for labels */
+    }
+
+    .booking-form-container select,
+    .booking-form-container input,
+    .booking-form-container button {
+        width: 100%; /* Full width for inputs and buttons */
+        font-size: 14px; /* Adjust font size for buttons */
+    }
+
+
+    
+    .booking-form-container button {
+        flex-direction: row;
+        width: 100%; /* Full width for inputs and buttons */
+        font-size: 14px; /* Adjust font size for buttons */
+    }
+    .booking-availability-section {
+        width: 90%; /* Ensure it takes full width on small screens */
+    }
+
+    button.booking-close-button {
+       width: 50px;
+    }
+}
+
+@media (max-width: 480px) {
+    .booking-form-container select,
+    .booking-form-container input,
+    .booking-form-container button {
+        font-size: 12px; /* Further decrease font size for very small screens */
+    }
+
+
+
+
+
+
+.booking-form-group {
+    display: flex; /* Align items in a row */
+    align-items: center; /* Center items vertically */
+    justify-content: center;
+    gap: 10%; /* Space between elements for normal view */
+    width: 100%; /* Full width for the form group */
+    max-width: 800px; /* Set a max width for the form group */
+    margin: 0 20%; 
+}
+
+}

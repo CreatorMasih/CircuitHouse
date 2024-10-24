@@ -1,0 +1,70 @@
+.room-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.room-head {
+    color: rgb(1, 1, 18);
+    
+    font-size: 30px;
+}
+
+
+
+#location-select {
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    
+}
+
+
+/* Style for the table */
+.room-table {
+    width: 95%;
+    border-collapse: collapse;
+    margin-top: 40px;
+}
+
+.AllRooms-table-header {
+    background-color: #030335;
+    
+    padding: 10px;
+    font-weight: bold;
+    text-align: left;
+    border: 1px solid #ddd;
+    color: white;
+}
+
+.AllRooms-table-data {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+    vertical-align: middle;
+}
+
+.table-row:hover {
+    background-color: #3256d8;
+}
+
+@media (max-width:667px) {
+    
+    .room-head {
+        
+        margin-top: 5px;
+    }
+
+    .room-list tr:hover {
+        background-color: #3256d8;
+    }
+
+    .room-list table {
+        overflow-x: auto;
+        min-width: 15em;
+    }
+}

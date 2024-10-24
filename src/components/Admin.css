@@ -1,0 +1,85 @@
+html{
+  min-height: 100vh;
+}
+.container{
+  /* background-color: aqua; */
+  max-height: 100vh;
+  display: flex;
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+
+/* Sidebar Styles */
+.sidebar {
+  width: 350px;
+  background-color: #03203e;
+  color: rgb(238, 243, 245);
+  height: 100vh;
+  position: relative;
+  gap: 40px;
+  transition: transform 0.3s ease;
+  z-index: 999; /* Ensure it's above the content */
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.sidebar.closed {
+  width: 60px; /* Sidebar collapsed width */
+  transform: translateX(0); /* Keep it in view */
+}
+
+.sidebar.open {
+  width: 300px; /* Sidebar full width */
+  height: 100vh;
+
+}
+
+/* Adjust Icons Visibility in Collapsed Mode */
+
+.sidebar.closed ul li i {
+  margin-right: 10; /* Remove margin when closed */
+}
+
+.sidebar.closed ul li span {
+  display: flex; /* Hide text when sidebar is closed */
+}
+
+.sidebar.open ul li span {
+  display: inline-block;
+}
+
+/* Main Content */
+.main-content {
+  flex-grow: 1;
+  transition: margin-left 0.3s ease;
+}
+
+.sidebar.closed ~ .main-content {
+  margin-left: 60px; /* Adjust content when sidebar is collapsed */
+}
+ .content{
+  width: 100vw;
+  min-height:96.4vh;
+  display: flex;
+ }
+ @media (max-width:667px){
+  .container{
+    max-height: 100vh;
+    display: flex;
+    overflow-y: hidden;
+    overflow-x: auto;
+  }
+ }
+ @media (max-width:376px){
+  .container{
+   
+    max-height: 100vh;
+    display: flex;
+    overflow-y: auto;
+    overflow-x: auto;
+  }
+  .content{
+    overflow-y: auto;
+  }
+ }

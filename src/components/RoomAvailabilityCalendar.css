@@ -1,0 +1,153 @@
+.room-availability-calendar {
+    text-align: center;
+    margin: 10px;
+  }
+  
+  .calendar-title {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  #location-select {
+    margin: 0 auto;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 30px;
+    font-size: 16px;
+    display: block;
+  }
+  
+  .loclab {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  
+  .legend {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+  }
+  
+  .legend p {
+    margin-right: 20px;
+  }
+  
+  .calendar-wrapper {
+    overflow-x: auto; /* Enable horizontal scrolling */
+    width: 100%;
+  }
+  
+  .calendar-table {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr; /* Four columns on larger screens */
+    gap: 10px;
+    margin-top: 20px;
+    min-width: 800px; /* Set a minimum width to trigger horizontal scrolling */
+    justify-content: center;
+  }
+  
+  .room-header,
+  .date-header {
+    font-weight: bold;
+    padding: 8px;
+    font-size: 17px;
+    border: 1px solid #ddd;
+    text-align: center;
+    background-color: #f7f7f7;
+  }
+  
+  .date-box {
+    font-size: 16px;
+    padding: 8px;
+    text-align: center;
+    font-weight: bold;
+    background-color: #f0f0f0;
+  }
+  
+  .room-item {
+    padding: 8px;
+    border: 1px solid #ddd;
+    text-align: center;
+    font-weight: bold;
+  }
+  
+  /* Responsive Styles for Tablets */
+  @media (max-width: 768px) {
+    .calendar-table {
+      grid-template-columns: repeat(4, 1fr); /* Reduce to 4 columns for tablet */
+      gap: 10px;
+      min-width: 600px; /* Min width to trigger horizontal scroll */
+    }
+  
+    .calendar-title {
+      font-size: 22px;
+    }
+  
+    #location-select {
+      font-size: 14px;
+    }
+  
+    .room-header{
+        font-size:18px;
+    }
+    .date-header {
+      font-size: 12px;
+    }
+  
+    .date-box {
+      font-size: 14px;
+      font-weight: bold;
+    }
+  
+    .room-item {
+      font-size: 12px;
+      padding: 10px;
+      font-weight: bold;
+    }
+  }
+  
+  /* Responsive Styles for Mobile Phones */
+  @media (max-width: 576px) {
+    .calendar-table {
+      grid-template-columns: repeat(4, 1fr); /* Horizontal scroll on mobile */
+      gap: 5px;
+      min-width: 500px; /* Trigger horizontal scroll on smaller screens */
+    }
+  
+    .calendar-wrapper {
+      overflow-x: auto; /* Enable horizontal scrolling on small screens */
+      white-space: nowrap;
+    }
+  
+    .calendar-title {
+      font-size: 20px;
+    }
+  
+    #location-select {
+      font-size: 12px;
+      padding: 10px;
+      max-width: 80%;
+    }
+  
+    .loclab {
+      font-size: 12px;
+    }
+  
+    .room-header,
+    .date-header {
+      font-size: 16px;
+      padding: 6px;
+    }
+  
+    .date-box {
+      font-size: 12px;
+      font-weight: bold;
+    }
+  
+    .room-item {
+      font-size: 12px;
+      padding: 10px;
+      font-weight: bold;
+    }
+  }
+  
