@@ -21,23 +21,14 @@ function Login() {
         const loginData = { email, password };
 
         try {
-            // const response = await fetch('https://script.google.com/macros/s/AKfycbx6EusnstAMpeFVjl-v2lKgforIFk-72MNJAfaoEuuYyu_kKfXIEYM2RU3x-0KiiMIo/exec', {
-            //     method: 'POST',
-            //     headers: {
-            //         'Content-Type': 'application/json',
-            //     },
-            //     body: JSON.stringify(loginData),
-            //     mode: 'cors' // Enable CORS mode
-            // });
-
-            const response = await fetch('http://localhost:5000/api/login', {
+            // Update this URL to your Render backend
+            const response = await fetch('https://circuithouse-1.onrender.com/api/login', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify(loginData),
             });
-             
 
             if (!response.ok) {
                 throw new Error('Network response was not ok');
@@ -95,3 +86,4 @@ function Login() {
 }
 
 export default Login;
+
