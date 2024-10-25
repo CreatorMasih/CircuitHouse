@@ -19,7 +19,8 @@ const Dashboard = () => {
             setLoading(true);
             setError('');
             try {
-                const response = await fetch(`http://localhost:5000/api/dashboard?location=${selectedLocation}`, {
+                // Update the URL to your Render backend
+                const response = await fetch(`https://circuithouse-1.onrender.com/api/dashboard?location=${selectedLocation}`, {
                     method: 'GET',
                     headers: {
                         'Content-Type': 'application/json',
@@ -81,3 +82,4 @@ const Dashboard = () => {
 };
 
 export default Dashboard;
+
