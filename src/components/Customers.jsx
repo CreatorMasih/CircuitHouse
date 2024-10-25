@@ -9,27 +9,27 @@ const CustomerList = () => {
     const [searchQuery, setSearchQuery] = useState(''); // State for search input
 
     useEffect(() => {
-        // Fetch data from the backend
+        // Fetch data from Google Sheets
         const fetchCustomers = async () => {
             try {
-                const response = await fetch('https://circuithouse-1.onrender.com/api/customers', { // Update this URL
+                const response = await fetch('https://script.google.com/macros/s/AKfycby6DMPxZjcharYUawfWHpOzrpuFyO5kosubVGtOIVAj1nN1DvjHbmpMj24vGO85JYI/exec', {
                     method: 'GET',
                     mode: 'cors', // Ensure CORS is set
                 });
-
+    
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
                 }
-
+    
                 const data = await response.json();
                 console.log(data);
                 
                 // Format the data based on the structure received from the API
                 let formattedData = data.rooms; // Access the rooms array directly
-
+    
                 // Sort customers by check-in date (ascending order)
                 formattedData = formattedData.sort((a, b) => new Date(a.checkInTime) - new Date(b.checkInTime));
-
+    
                 // Set the formatted data to state
                 setCustomers(formattedData);
                 setFilteredCustomers(formattedData); // Initially set to show all customers
@@ -122,4 +122,3 @@ const CustomerList = () => {
 };
 
 export default CustomerList;
-
