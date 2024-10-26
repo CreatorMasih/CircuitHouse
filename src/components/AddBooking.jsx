@@ -27,7 +27,7 @@ const AddBooking = () => {
     const fetchRoomData = async () => {
       try {
         const response = await fetch(
-          'https://script.google.com/macros/s/AKfycbymCVh2pLtwKTr-YM2tAlKMqnfn3TMzCbg_mOnG_uJGW4l4ee5kBOD_T3iJlDj5yac2/exec?location=Geedam'
+          'https://script.google.com/macros/s/AKfycbwOEHuNqTx318ZmV6EDFth_UAr5qy49rRLQUmzWoHvGRgogJ8PSKDoi8Qht0Zhz92Z6/exec?location=Geedam'
         );
         if (!response.ok) {
           throw new Error('Failed to fetch data');
