@@ -27,7 +27,7 @@ const BookRoom = () => {
     const fetchRoomData = async () => {
       try {
         const response = await fetch(
-          'https://script.google.com/macros/s/AKfycbzyl8HexqefMuiYlBKMPcATDiC91vzGNVLfUgFhCOsC3UeqXrSEsrV9sjSrh9zBSGR5/exec'
+          'https://script.google.com/macros/s/AKfycbymCVh2pLtwKTr-YM2tAlKMqnfn3TMzCbg_mOnG_uJGW4l4ee5kBOD_T3iJlDj5yac2/exec?location=Geedam'
         );
         if (!response.ok) {
           throw new Error('Failed to fetch data');
@@ -125,7 +125,7 @@ const BookRoom = () => {
     console.log(formData, 'This is the form Rooms Data-----');
 
 
-    const apiUrl = 'https://script.google.com/macros/s/AKfycbzyl8HexqefMuiYlBKMPcATDiC91vzGNVLfUgFhCOsC3UeqXrSEsrV9sjSrh9zBSGR5/exec'; // Replace with your API URL
+    const apiUrl = 'https://script.google.com/macros/s/AKfycbymCVh2pLtwKTr-YM2tAlKMqnfn3TMzCbg_mOnG_uJGW4l4ee5kBOD_T3iJlDj5yac2/exec'; // Replace with your API URL
 
     // Format the check-in and check-out dates
     const formatDateTime = (date) => {
