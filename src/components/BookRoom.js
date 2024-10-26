@@ -27,7 +27,7 @@ const BookRoom = () => {
     const fetchRoomData = async () => {
       try {
         const response = await fetch(
-          'https://script.google.com/macros/s/AKfycbzkDniAc1GxNSGyJheMRyd5GvA3LpBZbwrM3Gu9eK96_AcC2gXaQ5ffI6CfuNC3nEm8/exec'
+          'https://script.google.com/macros/s/AKfycbymCVh2pLtwKTr-YM2tAlKMqnfn3TMzCbg_mOnG_uJGW4l4ee5kBOD_T3iJlDj5yac2/exec?location=Geedam'
         );
         if (!response.ok) {
           throw new Error('Failed to fetch data');
@@ -125,7 +125,7 @@ const BookRoom = () => {
     console.log(formData, 'This is the form Rooms Data-----');
 
 
-    const apiUrl = 'https://script.google.com/macros/s/AKfycbzkDniAc1GxNSGyJheMRyd5GvA3LpBZbwrM3Gu9eK96_AcC2gXaQ5ffI6CfuNC3nEm8/exec'; // Replace with your API URL
+    const apiUrl = 'https://script.google.com/macros/s/AKfycbymCVh2pLtwKTr-YM2tAlKMqnfn3TMzCbg_mOnG_uJGW4l4ee5kBOD_T3iJlDj5yac2/exec'; // Replace with your API URL
 
     // Format the check-in and check-out dates
     const formatDateTime = (date) => {
@@ -269,7 +269,7 @@ const BookRoom = () => {
           console.log("Success:", roomData);
 
           setTimeout(() => {
-            fetch('https://script.google.com/macros/s/AKfycbzkDniAc1GxNSGyJheMRyd5GvA3LpBZbwrM3Gu9eK96_AcC2gXaQ5ffI6CfuNC3nEm8/exec')
+            fetch('https://script.google.com/macros/s/AKfycbymCVh2pLtwKTr-YM2tAlKMqnfn3TMzCbg_mOnG_uJGW4l4ee5kBOD_T3iJlDj5yac2/exec')
               .then(response => response.json())
               .then(data => {
                 console.log('Success:', data);
