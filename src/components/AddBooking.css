@@ -1,75 +1,215 @@
-.add-booking-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100vw;
-    font-family: Arial, sans-serif;
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.add-booking-title {
-   
-    font-size: 24px;
-    color: #090843;
+/* General Typography */
+h1, h2, h3 {
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
-
-
-.add-booking-table {
-    border-collapse: collapse;
+/* Gradient Background */
+.gradient-background-room {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  overflow-y: auto; /* Allow scrolling */
+  background: linear-gradient(
+    to top,
+    rgb(253, 255, 255) 0%,
+    rgba(149, 245, 238, 0.5) 50%,
+    rgba(8, 175, 161, 0) 100%
+  );
+  padding: 10px;
 }
 
-.add-booking-table td {
+/* Form Container */
+.book-room-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 90%; /* Ensures it fits within screen width */
+  max-width: 450px;
+  max-height: 80vh; /* Limits form height */
+  overflow-y: auto; /* Adds scroll if content exceeds height */
+  margin: 5rem auto 2rem; /* Added top margin for spacing */
+  padding: 15px;
+  background-color: rgba(255, 255, 255, 0.85);
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 2;
+}
+
+h2 {
+  text-align: center;
+  margin-top: 10rem;
+  color: #333;
+  font-size: 1.4rem;
+}
+
+/* Form Group */
+.book-room-form-group {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+/* Labels */
+label {
+  display: block;
+  margin-bottom: 3px;
+  font-weight: bold;
+  font-size: 0.85rem; /* Reduced font size */
+  color: #555;
+}
+
+/* Inputs and Selects */
+.book-room-input,
+.book-room-select,
+.book-room-date-picker,
+.react-datepicker__input-container input {
+  width: 100%;
+  height: 1.8rem; /* Reduced height */
+  padding: 6px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  font-size: 12px; /* Reduced font size */
+  color: #333;
+}
+
+/* Button */
+.book-room-btn-book-now {
+  font-weight: bold;
+  padding: 8px;
+  background-color: #1683f0;
+  color: whitesmoke;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 100%;
+  max-width: 150px;
+  text-align: center;
+}
+
+.book-room-btn-book-now:hover {
+  background-color: #348ae6;
+  color: whitesmoke;
+}
+
+/* Date Container */
+.book-room-date-container {
+  display: flex;
+  flex-direction: row;
+  gap: 0.6rem; /* Reduced gap */
+}
+
+.book-room-date-picker {
+  flex: 1;
+}
+
+/* React-datepicker Styling */
+.react-datepicker {
+  font-size: 12px;
+}
+
+.react-datepicker__header {
+  background-color: #007bff;
+  border-bottom: none;
+  color: #fff;
+}
+
+.react-datepicker__day-name,
+.react-datepicker__day,
+.react-datepicker__time-name {
+  color: #333;
+}
+
+/* Background Image */
+.bg-overlay-room {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50vh;
+  background: url('https://cdn.pixabay.com/photo/2021/04/17/04/56/tv-cabinet-6185022_1280.jpg') no-repeat center center;
+  background-size: cover;
+  z-index: -1;
+  opacity: 0.8;
+}
+
+/* Responsive Styles */
+
+
+@media (min-width: 1024px) {
+  .book-room-form {
+    max-width: 600px;
+    padding: 30px;
+    margin-top: 6rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  .book-room-input,
+  .book-room-select,
+  .book-room-date-picker {
+    height: 2.2rem;
+    font-size: 15px;
+  }
+
+  .book-room-btn-book-now {
+    font-size: 18px;
+    padding: 12px;
+  }
+}
+@media (max-width: 768px) {
+  h2 {
+    font-size: 1.2rem;
+    margin-top: 7rem;;
+  }
+
+  .gradient-background-room {
+    padding-top: 2rem; /* Extra padding for top content */
+  }
+
+  .book-room-form {
+    max-width: 90%;
+    max-height: 85vh;
+    margin-top: 3rem; /* Margin for extra spacing */
+  }
+
+  .book-room-btn-book-now {
+    width: 100%;
+    padding: 6px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  h2 {
+    font-size: 1.1rem;
+    margin-top: 8rem; /* Ensure space above heading */
+  }
+
+  .book-room-input,
+  .book-room-select,
+  .book-room-date-picker {
+    height: 1.6rem;
+    font-size: 11px;
+  }
+
+  .book-room-btn-book-now {
+    font-size: 12px;
     padding: 5px;
-}
-
-.add-booking-label {
-    font-weight: bold;
-    color: #0a0101;
-}
-
-.add-booking-input,
-.add-booking-select,
-.add-booking-file-input {
-    width: 100%;
-    padding: 8px;
-    margin: 5px 0;
-    border: 1px solid #160a0a;
-    border-radius: 4px;
-    box-sizing: border-box;
-}
-
-.add-booking-button {
-    padding: 12px 20px;
-    background-color: #177a2e;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    width: 100%;
-    margin-top: 20px;
-}
-
-.add-booking-input:focus,
-.add-booking-select:focus,
-.add-booking-file-input:focus {
-    border-color: #081a2d;
-    outline: none;
-}
-
-
-@media (max-width:667px) {
-    .add-booking-container {
-        max-width: 800px;
-        font-family: Arial, sans-serif;
-    }
-
-   
-    .add-booking-table {
-        width: 100%;
-    }
-
-    
-
-    
+  }
 }
