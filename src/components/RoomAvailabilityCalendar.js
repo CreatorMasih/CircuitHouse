@@ -12,7 +12,8 @@ const RoomAvailabilityCalendar = () => {
     const fetchRoomData = async () => {
       try {
         const response = await fetch(
-          'https://script.google.com/macros/s/AKfycbx8klWs3OtanH8THw6PUi-x0n0lyEtKw_RwWtGfpddrBc3OJ2Xo5_imesHb15gthY4_/exec?location=Geedam'
+          // 'https://script.google.com/macros/s/AKfycbx8klWs3OtanH8THw6PUi-x0n0lyEtKw_RwWtGfpddrBc3OJ2Xo5_imesHb15gthY4_/exec?location=Geedam'
+          https://script.google.com/macros/s/AKfycbx7IRBeLVJfX5Ch50xZf5J7G1xAQe_jZmbFVWN9HfiIsduQU12vrlLN0zCRpMCeyEGA/exec"
         );
         if (!response.ok) {
           throw new Error('Failed to fetch data');
