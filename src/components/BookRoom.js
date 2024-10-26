@@ -27,7 +27,7 @@ const BookRoom = () => {
     const fetchRoomData = async () => {
       try {
         const response = await fetch(
-          'https://script.google.com/macros/s/AKfycbzkDniAc1GxNSGyJheMRyd5GvA3LpBZbwrM3Gu9eK96_AcC2gXaQ5ffI6CfuNC3nEm8/exec'
+          'https://script.google.com/macros/s/AKfycbzPzDx1Qsy7yYskighHvnZHhIraV2bfftInuzGhafZCYM5C0K8BzjRZfvmOXlWrDJTr/exec'
         );
         if (!response.ok) {
           throw new Error('Failed to fetch data');
