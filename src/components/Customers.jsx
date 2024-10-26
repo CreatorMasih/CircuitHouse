@@ -87,12 +87,12 @@ const CustomerList = () => {
                             <th>Check-In Date</th>
                             <th>Check-Out Date</th>
                             <th>Total Days</th>
-                            <th>Created At</th>
+{/*                             <th>Created At</th> */}
                             <th>Full Name</th>
                             <th>Mobile No</th>
                             <th>Location</th>
                             <th>Customer Type</th>
-                            <th>Aadhar/Pan</th>
+{/*                             <th>Aadhar/Pan</th> */}
                             <th>No of Rooms</th>
                             <th>Total Guests</th>
                         </tr>
@@ -104,12 +104,12 @@ const CustomerList = () => {
                                 <td>{new Date(customer.checkInTime).toLocaleDateString()}</td>
                                 <td>{new Date(customer.checkOutTime).toLocaleDateString()}</td>
                                 <td>{customer.totalDays}</td>
-                                <td>{customer.createdAt}</td>
+{/*                                 <td>{customer.createdAt}</td> */}
                                 <td>{customer.fullName}</td>
                                 <td>{customer.moNo}</td>
                                 <td>{customer.location}</td>
                                 <td>{customer.customerType}</td>
-                                <td>{customer.aadharPan}</td>
+{/*                                 <td>{customer.aadharPan}</td> */}
                                 <td>{customer.noOffRoom}</td>
                                 <td>{customer.totalGuest}</td>
                             </tr>
