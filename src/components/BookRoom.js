@@ -420,7 +420,7 @@ const BookRoom = () => {
     </>
   );
 };
-
+export default BookRoom;
 
 
 
