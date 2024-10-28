@@ -125,7 +125,7 @@ const BookRoom = () => {
     console.log(formData, 'This is the form Rooms Data-----');
 
 
-    const apiUrl = 'https://script.google.com/macros/s/AKfycbymCVh2pLtwKTr-YM2tAlKMqnfn3TMzCbg_mOnG_uJGW4l4ee5kBOD_T3iJlDj5yac2/exec'; // Replace with your API URL
+    const apiUrl = 'https://script.google.com/macros/s/AKfycbzLzz23yX3PsMRz_VtMLSlW0tuKorS9j1cSPMWA_LOKQP_68ebYzKdKErQ20Ci7MdH7/exec'; // Replace with your API URL
 
     // Format the check-in and check-out dates
     const formatDateTime = (date) => {
