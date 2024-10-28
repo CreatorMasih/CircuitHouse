@@ -119,42 +119,88 @@ const BookRoom = () => {
     });
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setIsLoading(true); // Set loading state
-    console.log(formData, 'This is the form Rooms Data-----');
+  const handleSubmit = async (event) => {
+  event.preventDefault();
+  setIsLoading(true); // Set loading state
 
+  // Check if roomData is available before proceeding
+  if (!roomData || !roomData.data) {
+    console.error("Room data is not available during submission:", roomData);
+    Swal.fire({
+      title: "Error!",
+      text: "Room data is not loaded yet. Please try again.",
+      icon: "error",
+    });
+    setIsLoading(false); // Reset loading state
+    return; // Exit the function if room data is not available
+  }
 
-    const apiUrl = 'https://script.google.com/macros/s/AKfycbzsd7W4vDo4C8RHC9Rt85ix4xf14eqm6AJj2C0FQbwP1SdJe4fdB2GXVEkya2ZATnyx/exec'; // Replace with your API URL
+  // Format the current date
+  const formattedCurrentDate = new Date().toISOString().split('T')[0]; // Assuming you need the date in YYYY-MM-DD format
 
-    // Format the check-in and check-out dates
-    const formatDateTime = (date) => {
-      const options = {
-        year: 'numeric',
-        month: '2-digit',
-        day: '2-digit',
-        hour: '2-digit',
-        minute: '2-digit',
-        hour12: true
-      };
-      return new Intl.DateTimeFormat('en-US', options).format(date).replace(/,/g, '').replace(' ', ' '); // Remove extra commas and space
-    };
+  // Find the current room data for the formatted current date
+  let currentRoomData = roomData.data.find(entry => entry.date === formattedCurrentDate);
 
-    const checkInTime = formatDateTime(formData.checkInDate);
-    const checkOutTime = formatDateTime(formData.checkOutDate);
+  // Check if currentRoomData is found
+  if (!currentRoomData) {
+    console.error("No room data found for the current date:", formattedCurrentDate);
+    Swal.fire({
+      title: "Error!",
+      text: "No room data found for the current date.",
+      icon: "error",
+    });
+    setIsLoading(false); // Reset loading state
+    return; // Exit the function if no room data is found
+  }
 
-    // Prepare the payload to send to the server
-    const dataToSend = {
-      checkInTime,
-      checkOutTime,
-      fullName: formData.name,
-      moNo: formData.mobile,
-      location: formData.location,
-      customerType: formData.userType === "ordinary" ? "Non-Government" : "Government Official",
-      aadharPan: 'ABCDE1234F', // Static Aadhar/PAN value
-      noOffRoom: formData.numberOfRooms,
-      total_Guest: formData.numberOfGuests,
-    };
+  // Add your booking logic here, for example:
+  const bookingDetails = {
+    checkInDate,
+    checkOutDate,
+    location,
+    mobile,
+    name,
+    numberOfGuests,
+    numberOfRooms,
+    userType,
+  };
+
+  try {
+    // Make a request to your booking API
+    const response = await fetch('https://script.google.com/macros/s/AKfycbzsd7W4vDo4C8RHC9Rt85ix4xf14eqm6AJj2C0FQbwP1SdJe4fdB2GXVEkya2ZATnyx/exec', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(bookingDetails),
+    });
+
+    if (!response.ok) {
+      throw new Error('Failed to book the room');
+    }
+
+    // Handle success response
+    const result = await response.json();
+    Swal.fire({
+      title: "Success!",
+      text: "Room booked successfully!",
+      icon: "success",
+    });
+
+    // Optionally, refresh room data here
+    fetchRoomData(); // Refresh the room data after booking
+
+  } catch (error) {
+    console.error("Booking error:", error);
+    Swal.fire({
+      title: "Error!",
+      text: error.message,
+      icon: "error",
+    });
+  } finally {
+    setIsLoading(false); // Reset loading state
+  }
+};
 
     // Function to parse DD-MM-YYYY format into a Date object
     function parseDate(dateString) {
